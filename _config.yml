@@ -41,7 +41,7 @@ sass:
   style: :compressed  
 highlighter: pygments
 timezone: 'America/Chicago'
-exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh", "Gemfile.lock", "docker-compose.yml", "google81e032b4096c9ecf.html", "robots.txt"]
+exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh", "Gemfile.lock", "docker-compose.yml", "google81e032b4096c9ecf.html", "robots.txt", "photos"]
 # Plugins (GitHub Pages only support a few)
 gems:
   - jekyll-redirect-from

@@ -1,0 +1,24 @@
+language: ruby
+rvm:
+  - 2.1
+script:
+  - bundle exec jekyll build
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+deploy:
+    provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: dnadeem.com
+    region: us-east-1
+    cache_control: "max-age=31536000"
+    skip_cleanup: true
+    local-dir: _site
+    acl: public_read
+    detect_encoding: true
+notifications:
+    email:
+        on_failure: always
+        on_success: always
+

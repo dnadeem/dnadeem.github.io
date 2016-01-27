@@ -1,0 +1,48 @@
+# Website settings
+url: https://dnadeem.com
+baseurl: ''
+
+
+# Internal nav
+nav:
+  main:
+    writing: "/writing"
+    photos: "/photos"
+    misc: "/misc"
+  writing:
+    all: "/writing"
+    popular: "/writing/popular"
+    tags: "/writing/tags"
+    rss: "/feed.xml"
+
+# Bio settings
+name: "Danish Nadeem"
+slogan: "Personal website of Danish Nadeem"
+description: "The home page of Danish Nadeem."
+thumbnail_path: "picture.jpg"
+bitcoin_address: "19aLeE8RiZQFfRYZD3HZCqzmHywbUsCjUL"
+
+# URLs
+contact_urls: 
+  email: 
+    url: "mailto:danish@dnadeem.com"
+    label: "Email"
+    value: "danish@dnadeem.com"
+    icon: "envelope-square"
+ 
+
+
+# Jekyll build settings
+paginate: 10
+paginate_path: "/writing/page:num"
+permalink: "/writing/:title"
+sass:
+  sass_dir: "/assets/css"
+  style: :compressed  
+highlighter: pygments
+timezone: 'America/Chicago'
+exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh", "Gemfile.lock", "docker-compose.yml", "google81e032b4096c9ecf.html", "robots.txt"]
+# Plugins (GitHub Pages only support a few)
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap

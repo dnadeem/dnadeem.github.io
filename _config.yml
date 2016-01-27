@@ -45,3 +45,4 @@ exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh"
 # Plugins (GitHub Pages only support a few)
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap

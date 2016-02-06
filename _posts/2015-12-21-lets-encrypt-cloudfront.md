@@ -1,12 +1,6 @@
 ---
-layout: post
 title: "How to setup Letsencrypt with Amazon S3 and Cloudfront to get free SSL"
-tags:
-- Let's Encrypt
-- S3
-- Cloudfront
-- AWS
-thumbnail_path: blog/lets-encrypt/logo.png
+
 ---
 {% include figure.html path="blog/lets-encrypt/logo.png" link_to_full_size_image=false %}
 

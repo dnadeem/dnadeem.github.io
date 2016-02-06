@@ -39,7 +39,7 @@ permalink: "/writing/:title"
 sass:
   sass_dir: "/assets/css"
   style: :compressed  
-highlighter: pygments
+highlighter: rouge
 timezone: 'America/Chicago'
 exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh", "Gemfile.lock", "docker-compose.yml", "google81e032b4096c9ecf.html", "robots.txt"]
 # Plugins (GitHub Pages only support a few)

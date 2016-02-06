@@ -46,3 +46,11 @@ exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh"
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-paginate
+
+# Compress HTML
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false

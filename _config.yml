@@ -23,7 +23,7 @@ author:
   email:          "danish@dnadeem.com"
   uri:            
   avatar:         "/assets/img/m-icon-white-on-blue.png"
-  bio:            "Thank you for reading!"
+  bio:            "If you enjoyed this post, you should check out my other posts."
   facebook:       
   fb_id:          
   twitter:        
@@ -39,9 +39,7 @@ author:
 disqus_shortname: danishnadeem 
 google_cse_id:    ""
 google_api_key:   ""
-
-# Google Analytics, milanaryal.com current Tracking ID
-google_analytics_id: ""
+google_analytics_id: "UA-71254948-1"
 
 
 # ----------------------------------------------------------------------

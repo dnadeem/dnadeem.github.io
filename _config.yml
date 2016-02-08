@@ -1,52 +1,115 @@
-# Website settings
-url: https://dnadeem.com
-baseurl: ''
+# Jekyll config file http://jekyllrb.com/docs/configuration/
+
+# ----------------------------------------------------------------------
+# | Site settings                                                      |
+# ----------------------------------------------------------------------
+
+name:             "Danish Nadeem"
+description:      "Personal website"
+
+# Serving, does not include hostname
+baseurl:          ""
+
+# URL of site, include http://, do not include a trailing slash
+url:              "https://dnadeem.com"
+icon:
+  base_url:       "/assets/img/m-icon-blue-on-white.png"
+  width:          300
+  height:         300
+featured_image:   "/assets/img/home-bg.jpg"
+theme_color:      "#2196F3"
+author:
+  name:           "Danish Nadeem"
+  email:          "danish@dnadeem.com"
+  uri:            
+  avatar:         "/assets/img/m-icon-white-on-blue.png"
+  bio:            "Thank you for reading!"
+  facebook:       
+  fb_id:          
+  twitter:        
+  google_plus:    
+  instagram:      
+  vine:           
+  youtube:       
+  linkedin:       
+  pinterest:      
+  tumblr:        
+  github:        
+
+disqus_shortname: 
+google_cse_id:    ""
+google_api_key:   ""
+
+# Google Analytics, milanaryal.com current Tracking ID
+google_analytics_id: ""
 
 
-# Internal nav
-nav:
-  main:
-    writing: "/writing"
-    photos: "/photos"
-    misc: "/misc"
-  writing:
-    all: "/writing"
-    popular: "/writing/popular"
-    tags: "/writing/tags"
-    rss: "/feed.xml"
+# ----------------------------------------------------------------------
+# | Build settings                                                     |
+# ----------------------------------------------------------------------
 
-# Bio settings
-name: "Danish Nadeem"
-slogan: "Personal website of Danish Nadeem"
-description: "The home page of Danish Nadeem."
-thumbnail_path: "picture.jpg"
-bitcoin_address: "19aLeE8RiZQFfRYZD3HZCqzmHywbUsCjUL"
-
-# URLs
-contact_urls: 
-  email: 
-    url: "mailto:danish@dnadeem.com"
-    label: "Email"
-    value: "danish@dnadeem.com"
-    icon: "envelope-square"
- 
-
-
-# Jekyll build settings
-paginate: 10
-paginate_path: "/writing/page:num"
-permalink: "/writing/:title"
-sass:
-  sass_dir: "/assets/css"
-  style: :compressed  
-highlighter: rouge
+locale:        en_us
 timezone: 'America/Chicago'
-exclude: ["Dockerfile", "Gemfile", "LICENSE.txt", "README.md", "jekyll-serve.sh", "Gemfile.lock", "docker-compose.yml", "google81e032b4096c9ecf.html", "robots.txt"]
-# Plugins (GitHub Pages only support a few)
+markdown:      kramdown
+kramdown:
+  toc_levels:  1..3
+highlighter:   rouge
+
+# Permalink structure, see http://jekyllrb.com/docs/permalinks/
+permalink:     /:year/:title/
+
+paginate_path: /page:num/
+paginate:      10
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Front matter defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: "true"
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
+      comments: "false"
+
+# Files to exclude
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - src
+  - node_modules
+  - package.json
+  - Gruntfile.js
+  - vendor
+  - bower.json
+
+# Plugins
 gems:
+  - jekyll-paginate
+  - jekyll-feed
+#  - jekyll-mentions
   - jekyll-redirect-from
   - jekyll-sitemap
-  - jekyll-paginate
+  - jemoji
+
+
+# jekyll-mentions:
+#  base_url: https://twitter.com
 
 # Compress HTML
 compress_html:

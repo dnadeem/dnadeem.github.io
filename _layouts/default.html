@@ -1,23 +1,20 @@
+---
+layout: compress
+---
+
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<html lang="en" xmlns:cc="https://creativecommons.org/ns#">
+
   {% include head.html %}
-</head>
-<body>
-  {% include nav.html %}
-  {% if page.include_header %}
+
+  <body itemscope itemtype="https://schema.org/WebPage">
+
     {% include header.html %}
-  {% endif %}
-  <main class="container block p3">
+
     {{ content }}
-  </main>
-  {% if page.bottom_include %}
-    {% include {{ page.bottom_include }} %}
-  {% endif %}
-  {% include footer.html %}
-  {% include scripts.html %}
-</body>
+
+    {% include scripts.html %}
+
+  </body>
+
 </html>

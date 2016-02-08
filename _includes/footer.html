@@ -1,13 +1,60 @@
-<footer class="sticky-footer border-top border-light-gray gray h6">
-  <div class="sm-col px2">
-    &copy; {{ site.time | date: "%Y" }} {{ site.name }}.    
-  </div>
-  <div class="sm-col-right px2">
-    {% for external_url_hash in site.contact_urls %}
-      {% assign external_url = external_url_hash[1] %}
-      <a href="{{ external_url.url }}" target="_blank" class="gray hint--top" data-hint="{{ external_url.label }}">
-        <i class="fa fa-fw fa-lg fa-{{ external_url.icon }}"></i>
-      </a>
-    {% endfor %}
+<!-- Footer -->
+<footer class="info-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          <li>
+            <a href="/feed.xml">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-feed fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% if site.author.twitter %}
+          <li>
+            <a rel="me" href="//twitter.com/{{ site.author.twitter }}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.google_plus %}
+          <li>
+            <a rel="me" href="//google.com/+{{ site.author.google_plus }}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.github %}
+          <li>
+            <a rel="me" href="//github.com/{{ site.author.github }}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.tumblr %}
+          <li>
+            <a rel="me" href="http://{{ site.author.tumblr }}.tumblr.com">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-tumblr fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+        <p class="copyright">&copy; <span itemprop="copyrightYear">{{ site.time | date: '%Y' }}</span> {% if site.author.name %}<span itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ site.author.name }}</span></span>{% else %}{{ site.name }}{% endif %}</p>
+      </div>
+    </div>
   </div>
 </footer>

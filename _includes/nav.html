@@ -1,12 +1,26 @@
-<nav class="clearfix border-bottom border-light-gray">
-  <div class="left">
-    <a href="{{ site.url }}" class="button py2 button-transparent nav-button caps">{{ site.name }}</a>
-  </div>
-  <ul class="right list-reset m0 nav-collapse">
-    {% for nav_item in site.nav.main %}
-      <li class="inline-block m0">
-        <a href="{{ nav_item[1] }}" class="button button-transparent py2 h6 nav-button caps{% if page.nav_item == nav_item[0] %} link-color{% endif %}">{{ nav_item[0] }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top headroom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{{ site.name }}</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-top-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              {% for nav_item in site.data.nav %}
+                <li>
+                  <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
 </nav>

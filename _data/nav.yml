@@ -1,0 +1,13 @@
+# Site nav
+
+- title: "Home"
+  url:   "/"
+  
+- title: "Photos"
+  url:   "/photos"
+
+- title: "About"
+  url:   "/about/"
+
+- title: "Contact"
+  url:   "/contact/"

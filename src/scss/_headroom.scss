@@ -1,0 +1,37 @@
+//
+// Headroom
+//
+
+@media (min-width: 768px) {
+  .headroom {
+    // background-color: white;
+    // border-color: transparent;
+    transition: background-color 200ms,
+                transform 200ms;
+  }
+
+  .headroom--not-top {
+    transform: translateY(-100%);
+  }
+
+  .headroom--pinned {
+    background-color: rgba(white, 0.97);
+    border-color: darken(white, 5%);
+    transform: translateY(0%);
+  }
+
+  .headroom--top {
+    background-color: white;
+    border-color: transparent;
+  }
+
+  .headroom--unpinned {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .headroom--not-top {
+    display: none !important;
+  }
+}

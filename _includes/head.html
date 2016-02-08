@@ -1,11 +1,92 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-<meta name="description" content="{{ site.description }}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{% include share-meta.html %}
-<link rel="canonical" href="{% include canonical-url.html %}">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}{{ site.nav.writing.rss }}">
-{% include favicon.html %}
-{% include styles.html %}
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+  {% if page.excerpt %}
+    {% assign page_description = page.excerpt %}
+  {% elsif page.description %}
+    {% assign page_description = page.description %}
+  {% else %}
+    {% assign page_description = site.description %}
+  {% endif %}
+  {% capture meta_description %}{{ page_description | markdownify | strip_html | strip_newlines | truncate: 160 | escape_once }}{% endcapture %}
+
+  <!-- Basic page needs -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>{% if page.title %}{{ page.title | markdownify | strip_html | strip_newlines | escape_once }} &mdash; {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="title" content="{% if page.title %}{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.name }}{% endif %}">
+  <meta name="description" content="{{ meta_description }}">
+  {% if page.date %}<meta name="author" content="{% if page.author.name %}{{ page.author.name }}{% else %}{{ site.author.name }}{% endif %}">{% endif %}
+
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.name }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <meta property="og:description" content="{{ meta_description }}">
+  <meta property="og:image" content="{{ site.icon.base_url | prepend: site.url }}">
+  <meta property="fb:admins" content="{{ site.author.fb_id }}">
+  <meta property="fb:profile_id" content="{{ site.author.fb_id }}">
+  <meta property="og:type" content="{% if page.date %}{{ 'article' }}{% else %}{{ 'website' }}{% endif %}">
+  <meta property="og:locale" content="{{ site.locale }}">
+  {% if page.date %}
+  <meta property="article:author" content="https://www.facebook.com/{{ site.author.facebook }}">
+  <meta property="article:modified_time" content="{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}">
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {% for post in site.related_posts limit:3 %}<meta property="og:see_also" content="{{ post.url | replace:'index.html','' | prepend: site.url }}">{% endfor %}
+  {% endif %}
+
+  <!-- Twitter card property -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ site.author.twitter }}">
+  {% if page.date %}<meta name="twitter:creator" content="@{{ site.author.twitter }}">{% endif %}
+
+  <!-- SEO -->
+  {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  {% if page.previous.url %}<link rel="prev" href="{{ page.previous.url | replace:'index.html','' | prepend: site.url }}" title="{{ page.previous.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+  {% if page.next.url %}<link rel="next" href="{{ page.next.url | replace:'index.html','' | prepend: site.url }}" title="{{ page.next.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.name | markdownify | strip_html | strip_newlines | escape_once }}",
+    "alternateName": "{{ site.description | markdownify | strip_html | strip_newlines | escape_once }}",
+    "url": "{{ site.url }}/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/search/?q={searchTerms}",
+      "query-input": "required name=searchTerms"
+    }
+  }
+  </script>
+
+  <!-- Open Search description -->
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="{{ site.name }}">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="{{ site.name }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v={{ site.github.build_revision }}">
+
+  <!-- Favicon -->
+  <link rel="icon" sizes="16x16 32x32 64x64 128x128" href="/favicon.ico?v={{ site.github.build_revision }}">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="theme-color" content="{{ site.theme_color }}">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
+  <link rel="mask-icon" sizes="any" href="/favicon.svg" color="{{ site.theme_color }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Pin to start screen for IE on Windows -->
+  <meta name="application-name" content="{{ site.name }}">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
+</head>

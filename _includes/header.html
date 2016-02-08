@@ -1,3 +1,30 @@
-<header class="bg-splash-gray px3 py3 border-bottom border-light-gray">
-  {% include {{ page.include_header }} %}
+<!-- Navigation -->
+<header class="navbar navbar-default navbar-fixed-top headroom" role="banner" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" itemprop="url" href="/">
+            <span itemprop="name">{{ site.name }}</span>
+          </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <nav class="collapse navbar-collapse navbar-top-collapse" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <ul class="nav navbar-nav navbar-right">
+          {% for nav_item in site.data.nav %}
+            <li>
+              <a itemprop="url" href="{{ nav_item.url }}">
+                <span itemprop="name">{{ nav_item.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
 </header>

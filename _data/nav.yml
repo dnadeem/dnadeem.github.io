@@ -4,7 +4,7 @@
   url:   "/"
   
 - title: "Photos"
-  url:   "/photos"
+  url:   "/photos/"
 
 - title: "About"
   url:   "/about/"

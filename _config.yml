@@ -95,7 +95,7 @@ exclude:
   - Gruntfile.js
   - vendor
   - bower.json
-  - docs
+  - _docs
 
 # Plugins
 gems:

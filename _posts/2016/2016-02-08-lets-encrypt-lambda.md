@@ -1,6 +1,6 @@
 ---
 title: "Let's Encrypt certificate renewal with Lambda"
-date: 2016-01-27T13:12:53
+date: 2016-02-08T13:12:53
 excert: "Easily renew your Let's Encrypt cert."
 ---
 

@@ -3,7 +3,7 @@ title: "The Best Route From La Fortuna to Monteverde"
 date: 2016-05-06T11:44:53
 excerpt: "This is the best route from La Fortuna to Monteverde."
 ---
-![Azure](/uploads/2065/costa-rica/monteverde.jpg)
+![Azure](/uploads/2016/costa-rica/monteverde.jpg)
 
 **Step 1:** Create a new account or login to [Azure](https://azure.com) and determine what you wish to accelerate. This can either be storage, a website, or a cloud service.
 

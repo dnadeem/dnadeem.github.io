@@ -11,7 +11,7 @@ description:      "Personal website"
 baseurl:          ""
 
 # URL of site, include http://, do not include a trailing slash
-url:              "https://dnadeem.com"
+url:              "https://dnadeem.com/archive"
 icon:
   base_url:       "/assets/img/m-icon-blue-on-white.png"
   width:          300

@@ -16,6 +16,5 @@ In this site you'll find a recollection of thoughts and opinions based on my exp
 In case you were wondering, this site is:
 
 * Built on [Jekyll](http://jekyllrb.com/), the open source static site generator
-* Hosted on [Amazon CloudFront](https://aws.amazon.com/cloudfront/)
 
 If you enjoy the content found here, you might like to subscribe to my <i class="fa fa-feed" aria-hidden="true"></i> [feed](/feed.xml). 
